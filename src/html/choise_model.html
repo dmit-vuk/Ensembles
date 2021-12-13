@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Choosing</title>
+</head>
+<body>
+<h2>Выберете модель:</h2>
+<a href="{{ url_for('prepare_forest') }}">RandomForest</a>
+<a href="{{ url_for('prepare_boosting') }}">GradientBoosting</a>
+
+<form method="get" action="{{ url_for('index') }}">
+    <button type="submit">Вернуться на главную</button>
+</form>
+
+{% if data_input == True %}
+    <form method="get" action="{{ url_for('upload_data') }}">
+        <button type="submit">Вернуться к загрузке данных</button>
+    </form>
+    
+    <form method="get" action="{{ url_for('processing') }}">
+        <button type="submit">Вернуться к обработке данных</button>
+    </form>
+{% endif %}
+
+</body>
+</html>

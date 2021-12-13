@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Main page</title>
+</head>
+
+<form method="post" action="{{ url_for('prepare_forest') }}">
+    <label>n_estimators<input type="text" name="n_estimators"></label>
+    <label>max_depth<input type="text" name="max_depth"></label>
+    <label>feature_subsample_size<input type="text" name="feature_size"></label>
+    <button type="submit">Обучить модель</button>
+</form>
+
+<form method="post" action="{{ url_for('choise_model') }}">
+    <button type="submit">Вернуться к выбору модели</button>
+</form>
+
+<form method="get" action="{{ url_for('index') }}">
+    <button type="submit">Вернуться на Главную</button>
+</form>
+
+
+</body>
+</html>

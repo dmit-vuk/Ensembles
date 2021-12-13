@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Processing</title>
+</head>
+
+<h1>На этой странице вы можете задать предобработку данных. По умолчанию считается, что целевая переменная называется "target". Так же считается, что никакие столбцы удалять не нужно</h1>
+
+<form method="post" action="{{ url_for('processing') }}">
+    <label>Выберете название целевой переменной<input type="text" name="target"></label>
+    <label>Напишите через пробел столбцы, которые необходимо удалить<input type="text" name="del_cols"></label>
+    <button type="submit">Перейти к выбору модели</button>
+</form>
+
+<form method="get" action="{{ url_for('upload_data') }}">
+    <button type="submit">Вернуться к загрузе данных</button>
+</form>
+
+<form method="get" action="{{ url_for('index') }}">
+    <button type="submit">Вернуться на главную</button>
+</form>
+
+
+</body>
+</html>

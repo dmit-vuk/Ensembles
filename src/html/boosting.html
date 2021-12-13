@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Boosting</title>
+</head>
+
+<form method="post" action="{{ url_for('prepare_boosting') }}">
+    <label>n_estimators (целое положительное число)<input type="text" name="n_estimators"></label>
+    <label>max_depth (целое положительное число)<input type="text" name="max_depth"></label>
+    <label>feature_subsample_size (целое положительное число)<input type="text" name="feature_size"></label>
+    <label>learning_rate (неотрицательное число)<input type="text" name="learning_rate"></label>
+    <button type="submit">Обучить модель</button>
+</form>
+
+<form method="post" action="{{ url_for('choise_model') }}">
+    <button type="submit">Вернуться к выбору модели</button>
+</form>
+
+<form method="get" action="{{ url_for('index') }}">
+    <button type="submit">Вернуться на Главную</button>
+</form>
+
+</body>
+</html>
