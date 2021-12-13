@@ -179,7 +179,7 @@ def train_model():
             data_files.del_cols += [data_files.target]
             data = data.drop(data_files.del_cols, axis=1)
         else:
-            data = pd.read_csv('kc_house_data.csv')
+            data = pd.read_csv('../kc_house_data.csv')
             target = data.price.values
             data = data.drop(['price', 'id', 'date'], axis=1)
             data_files.del_cols = ['price', 'id', 'date']
