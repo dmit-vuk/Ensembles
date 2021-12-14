@@ -2,16 +2,15 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Boosting</title>
+    <title>Forest</title>
 </head>
 
-<h1>На данной странице Вы можете ввести свои гиперпараметры для модели градиентного бустинга. Если Вы этого не сделаете, то они будут выбраны по умолчанию.</h1>
+<h1>На данной странице Вы можете ввести свои гиперпараметры для модели случайного леса. Если Вы этого не сделаете, то они будут выбраны по умолчанию.</h1>
 
-<form method="post" action="{{ url_for('prepare_boosting') }}">
+<form method="post" action="{{ url_for('prepare_forest') }}">
     <label>n_estimators (целое положительное число)<input type="text" name="n_estimators"></label>
     <label>max_depth (целое положительное число)<input type="text" name="max_depth"></label>
     <label>feature_subsample_size (целое положительное число)<input type="text" name="feature_size"></label>
-    <label>learning_rate (неотрицательное число)<input type="text" name="learning_rate"></label>
     <button type="submit">Обучить модель</button>
 </form>
 
@@ -22,6 +21,7 @@
 <form method="get" action="{{ url_for('index') }}">
     <button type="submit">Вернуться на Главную</button>
 </form>
+
 
 </body>
 </html>

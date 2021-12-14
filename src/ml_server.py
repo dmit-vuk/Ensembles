@@ -179,7 +179,7 @@ def train_model():
             data_files.del_cols += [data_files.target]
             data = data.drop(data_files.del_cols, axis=1)
         else:
-            data = pd.read_csv('../kc_house_data.csv')
+            data = pd.read_csv('kc_house_data.csv')
             target = data.price.values
             data = data.drop(['price', 'id', 'date'], axis=1)
             data_files.del_cols = ['price', 'id', 'date']
@@ -241,9 +241,9 @@ def train_model():
         return render_template('train_model.html', forest=params.forest)
     except Exception as exc:
         if params.forest:
-            return render_template('exeption.html', func='prepare_forest')
+            return render_template('exeption.html', func='prepare_forest', exc=exc)
         else:
-            return render_template('exeption.html', func='prepare_boosting')
+            return render_template('exeption.html', func='prepare_boosting', exc=exc)
 
 @app.route('/check_result', methods=['GET', 'POST'])
 def check_result():
@@ -319,7 +319,7 @@ def prepare_forest():
             request.form['n_estimators'], request.form['max_depth'], request.form['feature_size']
         return redirect(url_for('train_model'))
 
-    return render_template('messages.html')
+    return render_template('forest.html')
 
 @app.route('/boosting', methods=['GET', 'POST'])
 def prepare_boosting():
